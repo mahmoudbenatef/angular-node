@@ -1,0 +1,11 @@
+.main{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.main-slider{
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}

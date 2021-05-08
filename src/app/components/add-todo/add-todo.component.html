@@ -1,0 +1,44 @@
+<!-- Button trigger modal -->
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <button type="button" id="modal" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add New User
+    </button>
+  </div>
+  <div class="col-md-4"></div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <form [formGroup]="profileForm" >
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input  required minlength="4"  formControlName="name" maxlength="12" name="name"   type="text" class="form-control"  aria-describedby="emailHelp"
+            >
+          </div>
+
+      
+          <div class="mb-3">
+            <label  class="form-label">Email</label>
+            <input type="text" formControlName="email" name="email" class="form-control">
+          </div>
+          <div class="text-center">
+          </div>
+        </form>
+      </div>
+      <div *ngIf="profileForm.invalid"
+      class="alert alert-danger">
+        name must be more than 5 chars, and mail must be in valid format
+
+ </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="addTodo()" [disabled]="profileForm.invalid">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

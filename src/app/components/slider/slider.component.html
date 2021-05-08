@@ -1,0 +1,9 @@
+<div class="slider" >
+  <img class="slider-image" [src]="images[position]" alt="">
+  <div class="slider-button-holders">
+    <button class="slider-button-holders-button" (click)="prev()" [attr.disabled]="(position===0)?true:null">prev</button>
+    <button class="slider-button-holders-button" (click)="auto()">auto</button>
+    <button class="slider-button-holders-button" (click)="next()" [attr.disabled]="(position===(images.length) -1)?true:null" >next</button>
+  </div>
+
+</div>

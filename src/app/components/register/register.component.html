@@ -1,0 +1,18 @@
+<div class="form">
+  <div class="form-registeration">
+
+  <h1>Register</h1>
+  <input type="text" [(ngModel)]="name" placeholder="enter your name">
+    <p *ngIf="name === ''">please enter your name</p>
+    <br>
+  <input type="number"  [(ngModel)]="age">
+    <p *ngIf="isNumber(age)">please enter your age</p>
+    <br>
+  <input type="submit" (click)="addUser()" value="register" [attr.disabled]="(name ==='' || isNumber(age))?true:null">
+  </div>
+<div class="form-users">
+  <ul>
+    <li *ngFor="let user of users">{{user.name + ", "+user.age}}</li>
+  </ul>
+</div>
+</div>
